@@ -1,8 +1,8 @@
 {
     // Comments are accepted in the manifest, even though it is JSON.
     "manifest_version": 3,
-    "name": "Chrome Extension v3 Starter",
-    "description": "A minimal example of a chrome extension using manifest v3",
+    "name": "erepublikHelper v3",
+    "description": "erepublikHelper v3",
     "version": "0.0.1",
     "icons": {
         "16": "logo/logo-16.png",
@@ -21,8 +21,11 @@
     "background": {
         "service_worker": "service-worker.js"
     },
-    "content_scripts": [{
-        "js": ["foreground.js"],
-        "matches": ["https://github.com/*"]
-    }]
+     "content_scripts": [
+        {
+            "matches": ["https://www.erepublik.com/*"],
+            "js": ["foreground.js"],
+            "run_at": "document_idle"
+        }
+    ]
 }
